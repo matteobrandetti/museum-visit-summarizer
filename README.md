@@ -7,3 +7,8 @@ A web application which makes a user to replay his/her museum visit
 ## Room Graph
 ![picture](exampleRoomGraph.PNG)
 
+## Requirement
+
+
+## Usage
+
