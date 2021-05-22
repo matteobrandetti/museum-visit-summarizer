@@ -28,15 +28,11 @@ public class DBPopulation implements ApplicationRunner{
 	}
 	
 	private void readAndSaveVisitorsFromLog() throws IOException, JsonException {
-		String workDir = System.getProperty("user.dir");
-		String path = "/src/main/resources/static/data/";
-		this.jd.saveVisitorsFromFileToPersistence(workDir + path, "data.json");
+		this.jd.saveVisitorsFromFileToPersistence("data.json");
 	}
 	
 	private void readAndSavePositions() throws IOException, JsonException {	
-		String workDir = System.getProperty("user.dir");
-		String path = "/src/main/resources/static/data/";
-		this.jd.saveMuseumFromFileToPersistence(workDir + path, "museum.json");
+		this.jd.saveMuseumFromFileToPersistence("museum.json");
 	}
 
 }

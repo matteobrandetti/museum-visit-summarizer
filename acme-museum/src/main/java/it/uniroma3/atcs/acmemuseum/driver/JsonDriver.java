@@ -4,8 +4,6 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 
 import com.github.cliftonlabs.json_simple.JsonArray;
@@ -62,8 +61,8 @@ public class JsonDriver {
 	 * @throws IOException
 	 * @throws JsonException
 	 */
-	public void saveMuseumFromFileToPersistence(String path, String filename) throws IOException, JsonException {
-		Reader reader = Files.newBufferedReader(Paths.get(path, filename));
+	public void saveMuseumFromFileToPersistence(String filename) throws IOException, JsonException {
+		Reader reader = new InputStreamReader(new ClassPathResource("static/data/" + filename).getInputStream());
 		persistMuseum(reader); 
 	}
 
@@ -75,8 +74,8 @@ public class JsonDriver {
 	 * @throws IOException
 	 * @throws JsonException
 	 */
-	public void saveVisitorsFromFileToPersistence(String path, String filename) throws IOException, JsonException {
-		Reader reader = Files.newBufferedReader(Paths.get(path, filename));
+	public void saveVisitorsFromFileToPersistence(String filename) throws IOException, JsonException {
+		Reader reader = new InputStreamReader(new ClassPathResource("static/data/" + filename).getInputStream());
 		persistVisitorsAndGroups(reader); 
 	}
 	
