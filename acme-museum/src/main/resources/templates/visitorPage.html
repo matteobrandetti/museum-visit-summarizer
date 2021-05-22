@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<meta charset="utf-8" />
+<style>
+table, th, td {
+	border: 1px solid black;
+}
+th, td {
+	padding: 10px;
+}
+</style>
+</head>
+<body>
+	<h1>Visitor Statistics</h1>
+	
+	<div>
+		<ul>
+			<li th:text="'Visitor number: ' + ${number}"></li>
+			<li th:text="'Total time spent: ' + ${totalTime}+ ' min'"></li>
+			<li th:text="'Average time spent: ' + ${avgTime}+ ' min'"></li>
+			<li th:text="${message}"></li>
+		</ul>
+	</div>
+
+    <div th:if="${presentations.size != 0}">
+		<ul>
+			<li th:text="'Average presentation rate of the visitor: ' + ${vAveragePresRate}"></li>
+			<li th:text="'General average presentation rate: ' + ${averagePresRate}"></li>
+			<li th:text="${message1}"></li>
+			
+			
+			<li th:text="'Average presentation time of the visitor: ' + ${vAveragePresTime} + ' sec'"></li>
+			<li th:text="'General presentation time: ' + ${averagePresTime}  + ' sec'"></li>
+			
+			<li th:text="'The visitor stopped ' + ${stoppedPresentations}  + '/' + ${numberOfPresentations} + ' presentations'"></li>
+			
+			
+		</ul>
+	</div>
+
+	<div>
+
+		<table>
+			<tr>
+				<td>POI name</td>
+				<td>Start time</td>
+				<td>End time</td>
+				<td>Rate</td>
+				<td>Interrupted</td>
+			</tr>
+
+			<tr th:each="p : ${presentations}">
+				<td th:text="${p.position.name}"></td>
+				<td th:text="${p.startTime}"></td>
+				<td th:text="${p.endTime}"></td>
+				<td th:text="${p.rate}"></td>
+				<td th:text="${p.isInterrupted}"></td>	
+			</tr>
+		</table>
+
+
+
+	</div>
+	
+	
+
+	<div>
+		<a th:href="@{'/getPOIGraph/' + ${visitor.id}}"> Check your movements on Positions of Interest(POIs) </a>
+	</div>
+
+	<div>
+		<a th:href="@{'/getRoomGraph/' + ${visitor.id}}">  Check your movements among rooms </a>
+	</div>
+
+
+</body>
+</html>
