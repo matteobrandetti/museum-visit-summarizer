@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<title>  </title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <div>
+		<form th:action="@{/getVisitorPage}" th:method="POST" th:object="${visitor}">
+
+			<table>
+				<tr>
+					<td>Digit Visitor number:</td>
+					<td><input type="text" th:field="*{number}" style="color:black"></td>
+					<td th:if="${#fields.hasErrors('number')}" th:errors="*{number}"></td>
+				</tr>
+				<tr>
+					<td>
+						<button type="submit">Submit</button>
+					</td>
+				</tr>
+
+			</table>
+
+		</form>
+
+
+	</div>
+	
+	<h2>
+		List of points of today's visitors
+	</h2>
+	
+	<div>
+		<table>
+			<tr th:each="v : ${visitors}">
+				<td th:text="${v.number}"></td>
+			</tr>
+		</table>
+	</div>
+	
+</body>
+</html>

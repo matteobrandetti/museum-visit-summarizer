@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: acme-museum
+Implementation-Version: 1.0.0
+Built-By: user
+Implementation-Vendor-Id: it.uniroma3.atcs
+Build-Jdk: 1.8.0_281
+Implementation-URL: https://spring.io/projects/spring-boot/acme-museum
+Created-By: Maven Integration for Eclipse
+

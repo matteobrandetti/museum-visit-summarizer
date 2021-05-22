@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<title>Museum</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" th:href="@{/css/assetsFotografi/css/main.css}" />
+</head>
+<body>
+    <!-- Nav -->
+		<nav id="nav">
+			<ul>
+				<li><a th:href="@{/}"><span class="icon fa-home"></span></a></li>
+				
+			</ul>
+		</nav>
+    
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<span class="content"><img
+				src="images/HechtMuseumNew.jpg" alt="" /></span>
+			<h1>
+				This is our <strong> Museum </strong> <br /> with the POIs available.
+			</h1>
+			<ul class="icons">
+				<li><a href="#" class="icon style2 fa-twitter"><span
+						class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon style2 fa-facebook"><span
+						class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon style2 fa-instagram"><span
+						class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon style2 fa-500px"><span
+						class="label">500px</span></a></li>
+				<li><a href="#" class="icon style2 fa-envelope-o"><span
+						class="label">Email</span></a></li>
+			</ul>
+		</header>
+
+		<!-- Main -->
+		<section id="main">
+
+			<!-- Thumbnails -->
+			<section class="thumbnails">
+				<div>
+					<h1>
+						<strong>Museum</strong>
+					</h1>
+
+					<ul>
+						<li th:each="pos : ${positions}">
+						    <span th:text="${pos.name}"></span>
+						</li>
+					</ul>
+				</div>
+			</section>
+
+		</section>
+
+		<div>
+			<a th:href="@{/getPOIForm}" class="image fit"> Add POI</a>
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="copyright">&copy; Realizzato da Matteo Brandetti</div>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/css/assetsFotografi/js/jquery.min.js"></script>
+	<script src="/css/assetsFotografi/js/skel.min.js"></script>
+	<script src="/css/assetsFotografi/js/main.js"></script>
+
+</body>
+</html>

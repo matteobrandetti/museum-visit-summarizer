@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<title>  </title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <div>
+		<form th:action="@{/getGroupPage}" th:method="POST" th:object="${group}">
+
+			<table>
+				<tr>
+					<td>Digit Group number:</td>
+					<td><input type="text" th:field="*{number}" style="color:black"></td>
+					<td th:if="${#fields.hasErrors('number')}" th:errors="*{number}"></td>
+				</tr>
+				<tr>
+					<td>
+						<button type="submit">Submit</button>
+					</td>
+				</tr>
+
+			</table>
+
+		</form>
+
+
+	</div>
+	
+	<h2>
+		List of today's groups
+	</h2>
+	
+	<div>
+		<table>
+			<tr th:each="g : ${groups}">
+				<td th:text="${g.number}"></td>
+			</tr>
+		</table>
+	</div>
+	
+</body>
+</html>

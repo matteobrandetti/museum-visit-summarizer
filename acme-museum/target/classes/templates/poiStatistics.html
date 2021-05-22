@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<meta charset="ISO-8859-1">
+<title>POI Statistics</title>
+<link rel="stylesheet" th:href="@{/css/assetsFotografi/css/main.css}" />
+
+</head>
+<body>
+
+	<table>
+
+		<tr>
+			<td>POI name</td>
+			<td>Average time</td>
+			<td>Percent of total visitors</td>
+		</tr>
+
+		<tr>
+			<td th:text="${poi.name}"></td>
+			<td th:text="${avgTimeOnPOI} +' seconds'"></td>
+			<td th:text="${percentOfVisitorsOnAPOI}+' %'"></td>
+		</tr>
+
+	</table>
+	
+	<div>
+			<a th:href="@{/statisticsPage}"> Click for Museum Statistics</a>
+	</div>
+
+
+
+</body>
+</html>

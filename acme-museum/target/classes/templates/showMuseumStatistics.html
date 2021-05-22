@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<title>Museum Statistics</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+table, th, td {
+	border: 1px solid black;
+}
+th, td {
+	padding: 10px;
+}
+</style>
+
+
+</head>
+<body>
+
+	<div>
+		<table>
+
+			<tr>
+				<td>Average Visit Time: </td>
+				<td th:text="${avgVisitTime} +' min'"></td>
+			</tr>
+			<tr>
+				<td>Average Visit Group Time: </td>
+				<td th:text="${avgGroupVisitTime} +' min'"></td>
+			</tr>
+
+		</table>
+	</div>
+
+	<div>
+		<table>
+
+			<tr>
+				<td>Hour</td>
+				<td>Number of visitors</td>
+			</tr>
+
+			<tr th:each="hour : ${hours}">
+				<td th:text="${hour.hour}"></td>
+				<td th:text="${hour.numberOfVisitors}"></td>
+			</tr>
+		</table>
+	</div>
+
+	<div>
+		<ul>
+			<li th:each="hour : ${hours}">
+				<table>
+				    <tr>
+						<td th:text="'hour:' + ${hour.hour}"></td>
+					</tr>
+
+					<tr>
+						<td>Room</td>
+						<td>Number of visitors</td>
+					</tr>
+
+					<tr th:each="instance : ${hour.roomToNumberOfVisitors}">
+						<td th:text="${instance.key}"></td>
+						<td th:text="${instance.value}"></td>
+					</tr>
+				</table>
+
+			</li>
+
+		</ul>
+	</div>
+
+
+
+</body>
+</html>

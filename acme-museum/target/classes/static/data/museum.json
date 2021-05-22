@@ -1,0 +1,206 @@
+[
+    {
+        "room_code": "0020-4ABD-0DA8",
+       
+        "positions": [
+            {
+                "name": "MuseumEntrance"
+            },
+            {
+                "name": "SymbolsJewishMenorah"    
+            },
+            {
+                "name": "PersianCult"    
+            },
+            {
+                "name": "JerusalemPhoto"    
+            }
+         ]
+     },
+     {
+        "room_code": "0020-4ABC-0909",
+       
+        "positions": [
+            {
+                "name": "AnimalModels"
+            },
+            {
+                "name": "BottomStairs"    
+            },
+            {
+                "name": "ChalcolitePeriod"    
+            },
+            {
+                "name": "LeadCoffinMosaic"    
+            },
+            {
+                "name": "JewishCoffins"    
+            },
+            {
+                "name": "ColumnNearCoffins"    
+            },
+            {
+                "name": "Anthropoids"    
+            },
+            {
+                "name": "DecoratedDoors"    
+            },
+            {
+                "name": "MenorahJewishEpigraphy"    
+            },
+            {
+                "name": "EntranceGallileeRebellion"    
+            },
+            {
+                "name": "RomanDivinitiesStatuettes"    
+            },
+            {
+                "name": "DuckBoxIvories"    
+            },
+            {
+                "name": "CanaaniteStelae"    
+            },
+            {
+                "name": "IvoryWomanPhoenician"    
+            },
+            {
+                "name": "ClayAmphorae"    
+            },
+            {
+                "name": "MuseumMotto"    
+            }
+         ]
+     },
+     {
+        "room_code": "0020-4AB6-D7E3",
+       
+        "positions": [
+            {
+                "name": "StairsToBathroom"
+            },
+            {
+                "name": "GlassOvenVessels"    
+            },
+            {
+                "name": "BronzeTools"    
+            },
+            {
+                "name": "MosaicfromSynagogue"    
+            },
+            {
+                "name": "WoodenTools"    
+            },
+            {
+                "name": "Phoenicians"    
+            },
+            {
+                "name": "MaterialCultures"    
+            },
+            {
+                "name": "StoneVesselsBowl"    
+            }
+         ]
+     },
+     {
+        "room_code": "0020-4ABC-A0E8",
+       
+        "positions": [
+            {
+                "name": "EverydayPottery"
+            },
+            {
+                "name": "ReligionAndCult"    
+            },
+            {
+                "name": "CraftsAndArts"    
+            },
+            {
+                "name": "ImportedPottery"    
+            },
+            {
+                "name": "MaritimeCommerce"    
+            },
+            {
+                "name": "BurialTradition2"    
+            },
+            {
+                "name": "PhoenicianWriting1"    
+            },
+            {
+                "name": "BuildingMethodsAndFacilities"    
+            }
+         ]
+     },
+     {
+        "room_code": "0020-4AB6-D7D9",
+       
+        "positions": [
+            {
+                "name": "ShipEntrance"
+            },
+            {
+                "name": "ShipBack"
+            },
+            {
+                "name": "BigScreen"    
+            },
+            {
+                "name": "ShipFront"    
+            },
+            {
+                "name": "ShipBigScreen"    
+            },
+            {
+                "name": "EntranceReubenHecht"    
+            },
+            {
+                "name": "CarpenterTools"    
+            },
+            {
+                "name": "Pottery"    
+            },
+            {
+                "name": "MaritimeArcheology"    
+            }
+         ]
+     },
+     {
+        "room_code": "0020-4ABC-08F2",
+       
+        "positions": [
+            {
+                "name": "Coins"
+            },
+            {
+                "name": "SevenSpecies"    
+            },
+            {
+                "name": "UpperFloorEntrance"    
+            },
+            {
+                "name": "OilLamps"    
+            },
+            {
+                "name": "Jerusalem"    
+            },
+            {
+                "name": "Weights"    
+            },
+            {
+                "name": "TempleMount"    
+            },
+            {
+                "name": "GreeceEgypt"    
+            },
+            {
+                "name": "Cyprus"    
+            },
+            {
+                "name": "Elevator2"    
+            },
+            {
+                "name": "Gems"    
+            }
+         ]
+     }
+]

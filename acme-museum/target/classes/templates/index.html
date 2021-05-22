@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<title>MUSEUM REVIEW</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" th:href="@{/css/assetsIndex/css/main.css}" />
+</head>
+<body>
+
+	<section>
+		<div>
+			<header>
+				<h1> MUSEUM VISIT REVIEWER</h1>
+				<p>
+					Replay your visit!<br/>
+				</p>
+			</header>
+		</div>
+	</section>
+
+	<!-- Main -->
+	<div id="main">
+		<div class="inner">
+
+			<div>
+
+				<div class="box">
+					<a th:href="@{/visitPage}"> Click for replaying your visit</a>
+				</div>
+				
+				<div class="box">
+					<a th:href="@{/groupsPage}"> Click for replaying a group visit</a>
+				</div>
+				
+				<div class="box">
+					<a th:href="@{/statisticsPage}"> Click for Museum Statistics</a>
+				</div>
+
+		
+			</div>
+
+		</div>
+	</div>
+
+</body>
+</html>

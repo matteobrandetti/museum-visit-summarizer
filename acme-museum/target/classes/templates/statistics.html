@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<meta charset="ISO-8859-1">
+<style>
+table, th, td {
+	border: 1px solid black;
+}
+
+th, td {
+	padding: 10px;
+}
+</style>
+
+<title>Statistics Page</title>
+
+</head>
+<body>
+
+    <h1>
+		Museum Statistics
+	</h1>
+
+
+	<div>
+
+		 <div>
+			<a th:href="@{/numberOfVisitorsStatisticsPage}"> Click for Museum Statistics</a>
+		</div>
+
+	</div>
+	
+	<div>
+
+		 <div>
+			<a th:href="@{/getUploadPage}"> Upload Museum Log</a>
+		</div>
+
+	</div>
+	
+	
+	<h2>
+		Check POI statistics
+	</h2>
+	
+
+
+	<div>
+		<form th:action="@{/getPOIStatistics}" th:method="POST" th:object="${poi}">
+
+			<table>
+				<tr>
+					<td>Digit POI name:</td>
+					<td><input type="text" th:field="*{name}" style="color:black"></td>
+					<td th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></td>
+				</tr>
+				<tr>
+					<td>
+						<button type="submit">Invio</button>
+					</td>
+				</tr>
+
+			</table>
+
+		</form>
+
+
+	</div>
+
+
+	
+
+
+
+	<h2>
+		List of points of interest
+	</h2>
+	
+	<div>
+		<ul th:each="poi : ${pois}">
+			<li th:text="${poi.name}"></li>		
+		</ul>
+	</div>
+
+</body>
+</html>
