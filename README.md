@@ -4,8 +4,7 @@ A web application which makes a user to replay his/her museum visit
 ### Preprocessing script
 
 ### Web application
-
-[Here, the exectuable file of the web application can be downloaded](https://drive.google.com/file/d/1c6hdJKcqEGeAgQrlpvVt5k_Wi1UKNT_e/view?usp=sharing)
+Here, the exectuable file of the web application can be [downloaded](https://drive.google.com/file/d/1c6hdJKcqEGeAgQrlpvVt5k_Wi1UKNT_e/view?usp=sharing)
 
 ## Position Graph
 ![picture](examplePositionGraph.PNG)
