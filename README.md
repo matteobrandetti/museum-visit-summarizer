@@ -4,7 +4,8 @@ A web application which makes a user to replay his/her museum visit
 ### Preprocessing script
 
 ### Web application
-Rhe exectuable file of the web application can be downloaded [here](https://drive.google.com/file/d/1c6hdJKcqEGeAgQrlpvVt5k_Wi1UKNT_e/view?usp=sharing)
+The `acme-museum` engine makes you replay a visit of the [Haifa Museum](https://www.hma.org.il/eng) of a certain visitor of group. Given a certain visitor (indentified by a number) it constructs two distict networks, representing the movements of the visitor among positions of interest (**POI**) and among the museum rooms, visualized as *force-directed graph* through the **d3.js** library (pictures below).
+The exectuable file (.jar) of the Web App can be downloaded [here](https://drive.google.com/file/d/1c6hdJKcqEGeAgQrlpvVt5k_Wi1UKNT_e/view?usp=sharing)
 
 ### Position Graph
 ![picture](examplePositionGraph.PNG)
