@@ -4,11 +4,12 @@ A web application which makes a user to replay his/her museum visit
 ### Preprocessing script
 
 ### Web application
-The **acme-museum** engine makes you replay a visit of the [Haifa Museum](https://www.hma.org.il/eng) of a certain visitor of group. 
+The **acme-museum** engine makes you replay a visit of the [Haifa Museum](https://www.hma.org.il/eng) of a certain visitor of group. The input of the application is the 
+`data.json` file, created by the **Post-Processing** script, which on turns extract and structures informations from the `Museum Data` directory. The file is read internally by the Web App, a it makes us to populate the database. However, it is possible to upload it.
 
-Given a certain visitor or group (indentified by a number), it constructs two distict networks, representing the movements of the visitor among positions of interest (**POIs**) and among the museum rooms, visualized as *force-directed graph* through the **d3.js** library (pictures below). A user can interact with the networks by dragging and moving the positions or the rooms.
+Given a certain visitor or group (indentified by a number), it constructs two distict **networks**, representing the movements of the visitor/group among positions of interest (**POIs**) (where sensors captures their movements) and among the museum rooms, visualized as *force-directed graph* through the **d3.js** library (pictures below). A user can interact with the networks by dragging and moving the positions or the rooms.
 
-Moreover, the engine makes us visualize the statistics of a certain visit. Namely, if the visitor stayed more/less than average, if he/she enjoyed or interruped presentations. Finally, it computes also the general statistics of the museum: (i) average time spent by the visitors/groups; (ii) number of visitors per hour (iii) number of visitors per room per hour.
+The engine makes us also to visualize the **statistics** of a certain visit. Namely, if the visitor stayed more/less than average, if he/she enjoyed or interruped presentations. Moreover, it computes also the general statistics of the Haifa Museum for a certain day: (i) average time spent by the visitors/groups; (ii) number of visitors per hour (iii) number of visitors per room per hour.
 
 The exectuable file (.jar) of the Web App can be downloaded [here](https://drive.google.com/file/d/1c6hdJKcqEGeAgQrlpvVt5k_Wi1UKNT_e/view?usp=sharing)
 
