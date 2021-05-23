@@ -1,11 +1,11 @@
 # museum-visit-summarizer
-A web application which makes a user to replay his/her visit of the [Haifa Museum](https://www.hma.org.il/eng).
+A web application which makes a user to replay his/her visit to the [Haifa Museum](https://www.hma.org.il/eng).
 ## Repository Content
 ### Preprocessing script
 The **log-to-json.py** script makes us to extract the data from the `Museum data` folder and to organize them in a structed format as a `json` file. In particular, 
 it creates a collection of *Visitor* objects and associates to them a *group number*, a list of *positions of interest (POIs)* and a list of *presentations* with attributes. It also filters out the *Visitor* objects which do not have any recorded movements among POIs.
 ### Web application
-The **acme-museum** engine makes you replay a visit of the [Haifa Museum](https://www.hma.org.il/eng) of a certain visitor of group. The input of the application is the 
+The **acme-museum** engine makes you replay a visit to the [Haifa Museum](https://www.hma.org.il/eng) of a certain visitor of group. The input of the application is the 
 `data.json` file, created by the **Post-Processing** script, which on turns extracts informations from the `Museum Data` directory. The file is read internally by the Web App, a it makes us to populate the database. However, it is also possible to upload it from the user interface.
 
 Given a certain visitor or group (indentified by a number), it constructs two distict **networks**, representing the movements of the visitor/group among positions of interest (**POIs**) (where sensors captures their movements) and among the museum rooms, visualized as *force-directed graph* through the **d3.js** library (pictures below). A user can interact with the networks by dragging and moving the positions or the rooms.
@@ -15,9 +15,12 @@ The engine makes us also to visualize the **statistics** of a certain visit. Nam
 The exectuable file (.jar) of the Web App can be downloaded [here](https://drive.google.com/file/d/1c6hdJKcqEGeAgQrlpvVt5k_Wi1UKNT_e/view?usp=sharing) (usage and prerequisited described below).
 
 ### Position Graph
+The **Position Graph** represents a directed graph, where a *node* is a POI and there exists an edge from a POI **a** to **b** whether the visitor moved from **a** to **b** in the visit. The graph (an example is depicted below) makes us to visualize the movements of the visitors among POIs. We can captures cycles and other infos.
 ![picture](examplePositionGraph.PNG)
 
 ### Room Graph
+The **Room Graph** represents a directed graph, where a *node* is a Room and there exists an edge from a Room **x** to **y** whether the visitor moved from **x** to **y** in the visit. Namely, since we have only POIs informations, if the visitors moved from a POI located in the room **x** to a POI located to the room **y**.
+The graph (an example is depicted below) makes us to visualize the movements of the visitors among the rooms a, we can capture what room was visited twice or more.
 ![picture](exampleRoomGraph.PNG)
 
 ## Prerequisites
