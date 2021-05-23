@@ -13,7 +13,7 @@ Rhe exectuable file of the web application can be downloaded [here](https://driv
 ![picture](exampleRoomGraph.PNG)
 
 ## Prerequisites
-- For running the **Web App** you need to have `Java-1.8.0` (or upper version) installed 
+- For running the **Web App** you need to have [Java 1.8.0](https://www.oracle.com/it/java/technologies/javase-downloads.html) (or upper version) installed 
 (you need to be able to run the command  `java -jar` on an excecutable file).
 - For running the **log_to_json.py** script, in order to process the Museum Log and extract a json file with all the visitors data organized, you
 need to have a `python` version installed (you need to be able to excecute a python script).
