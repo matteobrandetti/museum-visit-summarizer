@@ -6,7 +6,7 @@ The **log-to-json.py** script, located in the *Preprocessing* folder, makes us t
 it creates a collection of *Visitor* objects and associates them a *group number*, a list of *positions of interest (POIs)* and a list of *presentations* with all the attributes provided (i.e. the start time and the end time on a position/presentation and others). It also filters out the *Visitor* objects which do not have any recorded movements among POIs.
 ### Web application
 The **acme-museum** engine makes you replay a visit to the [Haifa Museum](https://www.hma.org.il/eng) of a certain visitor or group. The input of the application is the 
-`data.json` file, created by the **log_to_json.py** script, which extracts informations from the `Museum Data` directory. The file is read internally by the Web App, a it makes us to populate the database. However, it is also possible to upload it from the user interface.
+`data.json` file, created by the **log_to_json.py** script, which extracts informations from the `Museum Data` directory. The file is read internally by the Web App and it makes us to populate the database. However, it is also possible to upload it from the user interface.
 
 Given a certain visitor or group (indentified by a number), it constructs two distict **networks**, representing the movements of the visitor/group among positions of interest (**POIs**) (where sensors captures their movements) and among the museum rooms, visualized as *force-directed graph* through the **d3.js** library (pictures below). A user can interact with the networks by dragging and moving the positions or the rooms.
 
