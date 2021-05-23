@@ -2,8 +2,8 @@
 A web application which makes a user to replay his/her visit to the [Haifa Museum](https://www.hma.org.il/eng).
 ## Repository Content
 ### Preprocessing script
-The **log-to-json.py** script makes us to extract the data from the `Museum data` folder and to organize them in a structed format as a `json` file. In particular, 
-it creates a collection of *Visitor* objects and associates to them a *group number*, a list of *positions of interest (POIs)* and a list of *presentations* with attributes. It also filters out the *Visitor* objects which do not have any recorded movements among POIs.
+The **log-to-json.py** script makes us to extract the data from the `Museum data` folder and to organize them in a structured format as a `json` file. In particular, 
+it creates a collection of *Visitor* objects and associates them a *group number*, a list of *positions of interest (POIs)* and a list of *presentations* with all the attributes provided (i.e. the start time and the end time on a position/presentation and others). It also filters out the *Visitor* objects which do not have any recorded movements among POIs.
 ### Web application
 The **acme-museum** engine makes you replay a visit to the [Haifa Museum](https://www.hma.org.il/eng) of a certain visitor of group. The input of the application is the 
 `data.json` file, created by the **Post-Processing** script, which on turns extracts informations from the `Museum Data` directory. The file is read internally by the Web App, a it makes us to populate the database. However, it is also possible to upload it from the user interface.
