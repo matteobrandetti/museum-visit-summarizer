@@ -46,4 +46,4 @@ you need to do the following steps.
 2. Then, type the following command `python log_to_json.py <"argument1"> <"argument2"> <"argument2">`, where `argument1` is the
 path of the folder where you want to locate the json file, `argument2` is the name of the json file you want to create (must end with .json) and 
 `argument2` is the path to the log directory (e.g. *'Museum data/Logs/'*). 
-Alternatevely, if no argument is provided the following arguments are launched by default: `python log_to_json.py 'Museum data/' 'data.json' 'Museum data/Logs/'`
+Alternatevely, if no argument is provided the following command is launched by default: `python log_to_json.py 'Museum data/' 'data.json' 'Museum data/Logs/'`
