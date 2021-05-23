@@ -21,7 +21,7 @@ The **Position Graph** represents a directed graph, where a *node* is a POI and 
 
 ### Room Graph
 The **Room Graph** represents a directed graph, where a *node* is a Room and there exists an edge from a Room **x** to **y** whether the visitor moved from **x** to **y** in the visit. Namely, since we have only POIs informations, if the visitors moved from a POI located in the room **x** to a POI located to the room **y**.
-The graph (an example is depicted below) makes us to visualize the movements of the visitors among the rooms a, we can capture what room was visited twice or more.
+The graph (an example is depicted below) makes us to visualize the movements of the visitors among the rooms and we can also capture what room was visited twice or more.
 
 ![picture](exampleRoomGraph.PNG)
 
