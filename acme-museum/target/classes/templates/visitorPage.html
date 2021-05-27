@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns="http://www.w3.org/1999/html">
 <head>
+<title>Visitor Page</title>
 <meta charset="utf-8" />
 <style>
 table, th, td {
@@ -11,52 +12,151 @@ th, td {
 	padding: 10px;
 }
 </style>
+<link rel="stylesheet" type="text/css" th:href="@{/template/assets/css/bootstrap.min.css}" />
+
+ <link rel="stylesheet" type="text/css" th:href="@{/template/assets/css/font-awesome.css}" />
+
+ <link rel="stylesheet" th:href="@{/template/assets/css/templatemo-lava.css}" />
+
+ <link rel="stylesheet" th:href="@{/template/assets/css/owl-carousel.css}" />
 </head>
 <body>
-	<h1>Visitor Statistics</h1>
+
+<section>
+		<div align="center">
+			<header>
+				<img th:src="@{/images/museum.png}" width="800" height="150">
+				<br>
+				<br>
+				<p>
+					<font size="7" color="#ff8000">Visitor Page<br/></font>
+				</p>
+			</header>
+		</div>
+</section><br><br>
+ <div align="center">
+	<h2><font>Visitor Number: </font><font style="font-weight: bold;" color="#ff8000" th:text="${number}">
+		 </font> 
+	</h2>
+</div>
+<section class="section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
+                    data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                    <div class="features-item">
+                        <div class="features-icon">
+                            <img th:src="@{/images/graph.jpg}" alt="" width="180" height="200">
+                            <a th:href="@{'/getPOIGraph/' + ${visitor.id}}" class="main-button">
+                                Check visitor movements on Positions of Interest
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
+                    data-scroll-reveal="enter bottom move 30px over 0.6s after 0.4s">
+                    <div class="features-item">
+                        <div class="features-icon">
+                            <img th:src="@{/images/room.jpg}" alt="" width="180" height="200">
+                            <a th:href="@{'/getRoomGraph/' + ${visitor.id}}" class="main-button">
+                                Check visitor movements among rooms
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
+                    data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                    <div class="features-item">
+                        <div class="features-icon">
+                            <img th:src="@{/images/return.jpg}" alt="" width="180" height="200">
+                            <a th:href="@{/visitPage}" class="main-button">
+                               Search Another <br> Visitor
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Big Item End ***** -->
+
+	<div align="center">
+	<h2><font color="black">
+		Visitor Statistics</font>
+	</h2><br>
 	
-	<div>
-		<ul>
-			<li th:text="'Visitor number: ' + ${number}"></li>
-			<li th:text="'Total time spent: ' + ${totalTime}+ ' min'"></li>
-			<li th:text="'Average time spent: ' + ${avgTime}+ ' min'"></li>
-			<li th:text="${message}"></li>
-		</ul>
-	</div>
+	
+	<div align="center">
+	<table>
 
-    <div th:if="${presentations.size != 0}">
-		<ul>
-			<li th:text="'Average presentation rate of the visitor: ' + ${vAveragePresRate}"></li>
-			<li th:text="'General average presentation rate: ' + ${averagePresRate}"></li>
-			<li th:text="${message1}"></li>
-			
-			
-			<li th:text="'Average presentation time of the visitor: ' + ${vAveragePresTime} + ' sec'"></li>
-			<li th:text="'General presentation time: ' + ${averagePresTime}  + ' sec'"></li>
-			
-			<li th:text="'The visitor stopped ' + ${stoppedPresentations}  + '/' + ${numberOfPresentations} + ' presentations'"></li>
-			
-			
-		</ul>
-	</div>
+		<tr>
+			<td style="color: #ff8000;" height="70" align="center">Total time spent</td>
+			<td style="color: #ff8000;" height="70" align="center">Average time spent</td>
+		</tr>
 
-	<div>
+		<tr>
+			<td width="250" height="70" align="center" th:text="${totalTime}+ ' min'"></td>
+			<td width="250" height="70" align="center" th:text="${avgTime}+ ' min'"></td>
+		</tr>
+		<tr><td style="font-size: 20px;" height="100" align="center" colspan="2" th:text="${message}"></tr>
+
+	</table>
+	</div>
+	<br><br>
+
+    <div align="center" th:if="${presentations.size != 0}">
+    	
+    	<table>
+
+		<tr>
+			<td style="color: #ff8000;" width="320" height="70" align="center">Average presentation rate <br> of the visitor</td>
+			<td style="color: #ff8000;" width="320" height="70" align="center">General average <br> presentation rate</td>
+		</tr>
+
+		<tr>
+			<td height="70" align="center" th:text="${vAveragePresRate}"></td>
+			<td height="70" align="center" th:text="${averagePresRate}"></td>
+		</tr>
+		<tr><td style="font-size: 20px;" height="70" align="center" colspan="3" th:text="${message1}"></tr>
+
+	</table>
+	<br><br>
+	
+	<table>
+
+		<tr>
+			<td style="color: #ff8000;" width="320" height="70" align="center">Average presentation time <br> of the visitor</td>
+			<td style="color: #ff8000;" width="320" height="70" align="center">General presentation time</td>
+		</tr>
+
+		<tr>
+			<td height="70" align="center" th:text="${vAveragePresTime} + ' sec'"></td>
+			<td height="70" align="center" th:text="${averagePresTime}  + ' sec'"></td>
+		</tr>
+		<tr><td style="font-size: 20px;" height="70" align="center" colspan="3" th:text="'The visitor stopped ' + ${stoppedPresentations}  + '/' + ${numberOfPresentations} + ' presentations'"></tr>
+
+	</table>
+    	
+		
+	<br><br>
+
+	
 
 		<table>
 			<tr>
-				<td>POI name</td>
-				<td>Start time</td>
-				<td>End time</td>
-				<td>Rate</td>
-				<td>Interrupted</td>
+				<td style="color: #ff8000;" width="160" height="70" align="center">POI name</td>
+				<td style="color: #ff8000;" width="160" height="70" align="center">Start time</td>
+				<td style="color: #ff8000;" width="160" height="70" align="center">End time</td>
+				<td style="color: #ff8000;" width="160" height="70" align="center">Rate</td>
+				<td style="color: #ff8000;" width="160" height="70" align="center">Interrupted</td>
 			</tr>
 
 			<tr th:each="p : ${presentations}">
-				<td th:text="${p.position.name}"></td>
-				<td th:text="${p.startTime}"></td>
-				<td th:text="${p.endTime}"></td>
-				<td th:text="${p.rate}"></td>
-				<td th:text="${p.isInterrupted}"></td>	
+				<td height="60" style="font-weight: bold;" align="center" th:text="${p.position.name}"></td>
+				<td height="60" align="center" th:text="${p.startTime}"></td>
+				<td height="60" align="center" th:text="${p.endTime}"></td>
+				<td height="60" align="center" th:text="${p.rate}"></td>
+				<td height="60" align="center" th:text="${p.isInterrupted}"></td>	
 			</tr>
 		</table>
 
@@ -64,15 +164,8 @@ th, td {
 
 	</div>
 	
-	
 
-	<div>
-		<a th:href="@{'/getPOIGraph/' + ${visitor.id}}"> Check your movements on Positions of Interest(POIs) </a>
-	</div>
-
-	<div>
-		<a th:href="@{'/getRoomGraph/' + ${visitor.id}}">  Check your movements among rooms </a>
-	</div>
+<br><br><br><br>
 
 
 </body>

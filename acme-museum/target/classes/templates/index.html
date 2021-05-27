@@ -5,44 +5,80 @@
 <title>MUSEUM REVIEW</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" th:href="@{/css/assetsIndex/css/main.css}" />
+
+ 
+ <link rel="stylesheet" type="text/css" th:href="@{/template/assets/css/bootstrap.min.css}" />
+
+ <link rel="stylesheet" type="text/css" th:href="@{/template/assets/css/font-awesome.css}" />
+
+ <link rel="stylesheet" th:href="@{/template/assets/css/templatemo-lava.css}" />
+
+ <link rel="stylesheet" th:href="@{/template/assets/css/owl-carousel.css}" />
+ 
 </head>
 <body>
 
-	<section>
-		<div>
+
+<section>
+		<div align="center">
 			<header>
-				<h1> MUSEUM VISIT REVIEWER</h1>
+				<img th:src="@{/images/museum.png}" width="800" height="150">
 				<p>
-					Replay your visit!<br/>
+					<font size="5">Replay your visit!<br/></font>
 				</p>
 			</header>
 		</div>
 	</section>
 
-	<!-- Main -->
-	<div id="main">
-		<div class="inner">
+    <!-- ***** Features Big Item Start ***** -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
+                    data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                    <div class="features-item">
+                        <div class="features-icon">
+                            <img th:src="@{/images/visit.jpg}" alt="" width="180" height="200">
+                            <a th:href="@{/visitPage}" class="main-button">
+                                Visit Review
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
+                    data-scroll-reveal="enter bottom move 30px over 0.6s after 0.4s">
+                    <div class="features-item">
+                        <div class="features-icon">
+                            <img th:src="@{/images/group.jpg}" alt="" width="180" height="200">
+                            <a th:href="@{/groupsPage}" class="main-button">
+                                Group Visit Review
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
+                    data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                    <div class="features-item">
+                        <div class="features-icon">
+                            <img th:src="@{/images/statistics.jpg}" alt="" width="180" height="200">
+                            <a th:href="@{/statisticsPage}" class="main-button">
+                               Museum Statistics
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Big Item End ***** -->
 
-			<div>
+	
 
-				<div class="box">
-					<a th:href="@{/visitPage}"> Click for replaying your visit</a>
-				</div>
+
 				
-				<div class="box">
-					<a th:href="@{/groupsPage}"> Click for replaying a group visit</a>
-				</div>
 				
-				<div class="box">
-					<a th:href="@{/statisticsPage}"> Click for Museum Statistics</a>
-				</div>
-
+			
 		
-			</div>
-
-		</div>
-	</div>
-
+	
 </body>
 </html>

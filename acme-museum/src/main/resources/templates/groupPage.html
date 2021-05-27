@@ -2,39 +2,114 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns="http://www.w3.org/1999/html">
 <head>
+<title>Group Page</title>
 <meta charset="utf-8" />
+<style>
+
+th, td {
+	padding: 10px;
+}
+</style>
+<link rel="stylesheet" type="text/css" th:href="@{/template/assets/css/bootstrap.min.css}" />
+
+ <link rel="stylesheet" type="text/css" th:href="@{/template/assets/css/font-awesome.css}" />
+
+ <link rel="stylesheet" th:href="@{/template/assets/css/templatemo-lava.css}" />
+
+ <link rel="stylesheet" th:href="@{/template/assets/css/owl-carousel.css}" />
 </head>
 <body>
-	<h1>Group Statistics</h1>
 
-	<div>
-	    <h3>Statistics Summary</h3>
-		<ul>
-			<li th:text="'Group number: ' + ${number}"></li>
-			<li
-				th:text="'Average time spent by the group: ' + ${gAvgTime}+ ' min'"></li>
-			<li th:text="'Average group time: ' + ${avgTime}+ ' min'"></li>
-			<li th:text="${message}"></li>
-		</ul>
-		<h3>Group members</h3>
-		<div th:each="v : ${group.visitors}">
-			<a th:href="@{'/getVisitor/' + ${v.number}}" th:text="${v.number}"> </a>
+<section>
+		<div align="center">
+			<header>
+				<img th:src="@{/images/museum.png}" width="800" height="150">
+				<br>
+				<br>
+				<p>
+					<font size="7" color="#ff8000">Group Page<br/></font>
+				</p>
+			</header>
 		</div>
-	</div>
-
-	<div>
-	    <h3>Presentations statistics</h3>
-		<ul>
-			<li th:text="'Average presentation rate of the group: ' + ${gAveragePresRate}"></li>
-			<li th:text="'General average presentation rate by all groups: ' + ${averagePresRate}"></li>
-			<li th:text="${message1}"></li>
-			
-			
-			<li th:text="'Average presentation time of the grouop: ' + ${gAveragePresTime} + ' sec'"></li>
-			<li th:text="'General average presentation time by all groups: ' + ${averagePresTime}  + ' sec'"></li>
-						
-		</ul>
-	</div>
-
+</section>
+<table align="center" width="90%">
+<tr>
+    <td valign="top" align="left" width="70%"><br><br>
+    
+    	<table style="border: 1px solid black;" align="center">
+    		<tr>
+    			<td height="60" style="border: 1px solid black;" width="80%" align="center">
+    				<font color="#ff8000">Group Members</font></td>
+    		</tr>
+    		<tr th:each="v : ${group.visitors}">
+    			<td height="60" align="center" style="border: 1px solid black;" width="80%"><a th:href="@{'/getVisitor/' + ${v.number}}" th:text="${v.number}"></a>
+    			</td>
+    		</tr>
+    	</table>
+    	<br><br>
+    
+    	<table align="center" style="border: 1px solid black;">
+    		<tr>
+    			<td height="60" colspan="3" style="border: 1px solid black;" width="80%" align="center">
+    				<font color="#ff8000">Group Statistics</font>
+    		</tr>
+    		<tr>
+    			<td height="60" align="center" style="border: 1px solid black;">Group number</td>
+    			<td height="60" align="center" style="border: 1px solid black;">Average time spent by the group</td>
+    			<td height="60" align="center" style="border: 1px solid black;">Average group time</td>
+    		</tr>
+    		<tr>
+    			<td height="60" align="center" style="border: 1px solid black;" th:text="${number}"></td>
+    			<td height="60" align="center" style="border: 1px solid black;" th:text="${gAvgTime}+ ' min'"></td>
+    			<td height="60" align="center" style="border: 1px solid black;" th:text="${avgTime}+ ' min'"></td>
+    		</tr>
+    		<tr>
+    			<td height="60" align="center" style="border: 1px solid black;" colspan="3" th:text="${message}"></td>
+    		</tr>
+    	</table>
+    	<br><br>
+    	<table align="center" style="border: 1px solid black;">
+    		<tr>
+    			<td height="60" colspan="2" style="border: 1px solid black;" width="80%" align="center">
+    				<font color="#ff8000">Presentations statistics: </font>Rate</td>
+    		</tr>
+    		<tr>
+    			<td height="60" align="center" width="380" style="border: 1px solid black;">Average presentation rate of the group</td>
+    			<td height="60" align="center" width="380" style="border: 1px solid black;">General average presentation rate by all groups</td>
+    		</tr>
+    		<tr>
+    			<td height="60" align="center" style="border: 1px solid black;" th:text="${gAveragePresRate}"></td>
+    			<td height="60" align="center" style="border: 1px solid black;" th:text="${averagePresRate}"></td>
+    		</tr>
+    		<tr>
+    			<td height="60" align="center" colspan="2" style="border: 1px solid black;" th:text="${message1}"></td>
+    		</tr>
+    	</table>
+    	<br><br>
+    	<table style="border: 1px solid black;">
+    		<tr>
+    			<td height="60" colspan="2" style="border: 1px solid black;" width="80%" align="center">
+    				<font color="#ff8000">Presentations statistics: </font>Time</td>
+    		</tr>
+    		<tr>
+    			<td height="60" align="center" style="border: 1px solid black;">Average presentation time of the group</td>
+    			<td height="60" align="center" style="border: 1px solid black;">General average presentation time by all groups</td>
+    		</tr>
+    		<tr>
+    			<td height="60" align="center" style="border: 1px solid black;" th:text="${gAveragePresTime} + ' sec'"></td>
+    			<td height="60" align="center" style="border: 1px solid black;" th:text="${averagePresTime}  + ' sec'"></td>
+    		</tr>
+    	</table>
+    </td>
+    <td width="20%" align="center" valign="top">
+    <br>
+    	<a th:href="@{/groupsPage}">
+    	<img th:src="@{/images/searchAnotherGroup.png}">
+    	</a>
+	</td>
+    <!-- ***** Features Big Item End ***** -->
+    </tr>
+</table>
+<br><br>
 </body>
 </html>

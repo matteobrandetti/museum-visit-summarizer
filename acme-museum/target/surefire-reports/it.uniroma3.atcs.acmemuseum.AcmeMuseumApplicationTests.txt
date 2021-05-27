@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: it.uniroma3.atcs.acmemuseum.AcmeMuseumApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 258.674 s - in it.uniroma3.atcs.acmemuseum.AcmeMuseumApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 360.356 s - in it.uniroma3.atcs.acmemuseum.AcmeMuseumApplicationTests

@@ -2,44 +2,113 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns="http://www.w3.org/1999/html">
 <head>
-<title>  </title>
+<title> Search Group </title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+table, th, td {
+	border: 1px solid black;
+}
+
+th, td {
+	padding: 10px;
+}
+</style>
+<link rel="stylesheet" type="text/css" th:href="@{/template/assets/css/bootstrap.min.css}" />
+
+ <link rel="stylesheet" type="text/css" th:href="@{/template/assets/css/font-awesome.css}" />
+
+ <link rel="stylesheet" th:href="@{/template/assets/css/templatemo-lava.css}" />
+
+ <link rel="stylesheet" th:href="@{/template/assets/css/owl-carousel.css}" />
 </head>
 <body>
-  <div>
+
+<section>
+		<div align="center">
+			<header>
+				<img th:src="@{/images/museum.png}" width="800" height="150">
+				<br>
+				<br>
+				<p>
+					<font size="7" color="#ff8000">Group Visit Review<br/></font>
+				</p>
+			</header>
+		</div>
+</section>
+
+<!-- ***** Header Area Start ***** -->
+    <section class="header-area header-sticky3">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                        	<li class="scroll-to-section"><a th:href="@{/}" class="menu-item">Home</a></li>
+                        </ul>
+                        
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Header Area End ***** -->
+    
+    <div align="center" class="divtop">
+	<h2><font color="#ff8000">
+		Search Group</font>
+	</h2>
+	<br>
+	
+<div>
 		<form th:action="@{/getGroupPage}" th:method="POST" th:object="${group}">
 
 			<table>
 				<tr>
-					<td>Digit Group number:</td>
-					<td><input type="text" th:field="*{number}" style="color:black"></td>
+					<td align="center" width="300">Digit Group number:</td>
+					<td align="center" width="250"><input type="text" th:field="*{number}" style="color:black"></td>
 					<td th:if="${#fields.hasErrors('number')}" th:errors="*{number}"></td>
+					<td width="450"><div class="newTemplate-new newTemplate-temp">
+						<div class="containerr2">
+           				 <div class="roww2">
+                			<div class="col-12">
+                    			<nav class="mainn2-navv2">
+									<ul class="navv2">
+                            			<li class="sub2">
+                                			<a href="javascript:;">List of today's group visitor</a>
+                                				<ul>
+													<li th:each="g : ${groups}" th:text="${g.number}"></li>		
+												</ul>
+                            			</li>
+                           
+                        			</ul>
+                       			</nav>
+                			</div>
+           	 			 </div>
+        				</div>
+        </div></td>
 				</tr>
 				<tr>
-					<td>
-						<button type="submit">Submit</button>
+					<td align="center">
+						<button type="submit">Invio</button>
 					</td>
 				</tr>
 
 			</table>
 
 		</form>
-
+		
 
 	</div>
 	
-	<h2>
-		List of today's groups
-	</h2>
-	
-	<div>
-		<table>
-			<tr th:each="g : ${groups}">
-				<td th:text="${g.number}"></td>
-			</tr>
-		</table>
-	</div>
+</div>
+<br>
+  
 	
 </body>
 </html>

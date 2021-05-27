@@ -15,34 +15,65 @@ th, td {
 
 <title>Statistics Page</title>
 
+<link rel="stylesheet" type="text/css" th:href="@{/template/assets/css/bootstrap.min.css}" />
+
+ <link rel="stylesheet" type="text/css" th:href="@{/template/assets/css/font-awesome.css}" />
+
+ <link rel="stylesheet" th:href="@{/template/assets/css/templatemo-lava.css}" />
+
+ <link rel="stylesheet" th:href="@{/template/assets/css/owl-carousel.css}" />
+
 </head>
 <body>
 
-    <h1>
-		Museum Statistics
-	</h1>
-
-
-	<div>
-
-		 <div>
-			<a th:href="@{/numberOfVisitorsStatisticsPage}"> Click for Museum Statistics</a>
+<section>
+		<div align="center">
+			<header>
+				<img th:src="@{/images/museum.png}" width="800" height="150">
+				<br>
+				<br>
+				<p>
+					<font size="7" color="#ff8000">Museum Statistics<br/></font>
+				</p>
+			</header>
 		</div>
+</section>
 
-	</div>
-	
-	<div>
+ <!-- ***** Header Area Start ***** -->
+    <section class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                        	<li class="scroll-to-section"><a th:href="@{/}" class="menu-item">Home</a></li>
+                            <li class="scroll-to-section"><a th:href="@{/numberOfVisitorsStatisticsPage}" class="menu-item">Click for General Museum Statistics</a></li>
+                            <li class="scroll-to-section"><a th:href="@{/getUploadPage}" class="menu-item">Upload Museum Log</a></li>
+                           
+                        </ul>
+                        
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Header Area End ***** -->
 
-		 <div>
-			<a th:href="@{/getUploadPage}"> Upload Museum Log</a>
-		</div>
 
-	</div>
 	
 	
-	<h2>
-		Check POI statistics
+
+	
+	<div align="center" class="divtop">
+	<h2><font color="#ff8000">
+		Check POI statistics</font>
 	</h2>
+	<br>
 	
 
 
@@ -54,9 +85,28 @@ th, td {
 					<td>Digit POI name:</td>
 					<td><input type="text" th:field="*{name}" style="color:black"></td>
 					<td th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></td>
+					<td width="240"><div class="newTemplate-new newTemplate-temp">
+						<div class="containerr2">
+           				 <div class="roww2">
+                			<div class="col-12">
+                    			<nav class="mainn2-navv2">
+									<ul class="navv2">
+                            			<li class="sub2">
+                                			<a href="javascript:;">Suggestions</a>
+                                				<ul>
+													<li th:each="poi : ${pois}" th:text="${poi.name}"></li>		
+												</ul>
+                            			</li>
+                           
+                        			</ul>
+                       			</nav>
+                			</div>
+           	 			 </div>
+        				</div>
+        </div></td>
 				</tr>
 				<tr>
-					<td>
+					<td align="center">
 						<button type="submit">Invio</button>
 					</td>
 				</tr>
@@ -64,24 +114,15 @@ th, td {
 			</table>
 
 		</form>
-
+		
 
 	</div>
+	
+</div>
+
 
 
 	
-
-
-
-	<h2>
-		List of points of interest
-	</h2>
-	
-	<div>
-		<ul th:each="poi : ${pois}">
-			<li th:text="${poi.name}"></li>		
-		</ul>
-	</div>
 
 </body>
 </html>

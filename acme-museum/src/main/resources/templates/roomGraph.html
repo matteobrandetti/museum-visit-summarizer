@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns="http://www.w3.org/1999/html">
 <head>
+<title>Room Graph</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,23 +13,31 @@
     </style>
 </head>
 <body>
+<section>
+		<div align="center">
+			<header>
+				<img th:src="@{/images/museum.png}" width="800" height="150"> 			
+				<br><br><br>
+			</header>
+		</div>
+</section>
 	<center>
-		<table width="1200" height="700" border=5 bordercolor="black">
+		<table width="1300" height="700" border=5 bordercolor="black">
 			<tr>
 				<td>
-					<center>ROOM GRAPH OF THE VISITOR</center>
+					<center><h3><font color="#ff8000">ROOM GRAPH OF THE VISITOR</font></h3></center>
 				</td>
 				<td>
-					<center>List of visited Rooms</center>
+					<center><h3><font color="#ff8000">List of visited Rooms</font></h3></center>
 				</td>
 			</tr>
 			<tr>
 				<td width="1000" style="vertical-align: top"><svg width="1000"
 						height="700"></svg></td>
-				<td width="200" style="vertical-align: top">
+				<td width="300" style="vertical-align: top">
 					<center>
 						<ol>
-							<li th:each="room : ${rooms}" th:text="${room.code}"></li>
+							<li style=" margin: 10px 0" th:each="room : ${rooms}" th:text="${room.code}"></li>
 						</ol>
 					</center>
 				</td>

@@ -5,11 +5,54 @@
 	<title>Login Funzionario</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/template/assets/css/bootstrap.min.css}" />
+
+ <link rel="stylesheet" type="text/css" th:href="@{/template/assets/css/font-awesome.css}" />
+
+ <link rel="stylesheet" th:href="@{/template/assets/css/templatemo-lava.css}" />
+
+ <link rel="stylesheet" th:href="@{/template/assets/css/owl-carousel.css}" />
 
 </head>
 <body>
 
-	<div>
+<section>
+		<div align="center">
+			<header>
+				<img th:src="@{/images/museum.png}" width="800" height="150">
+				<br>
+				<br>
+				<p>
+					<font size="7" color="#ff8000">Upload Json File<br/></font>
+				</p>
+			</header>
+		</div>
+</section><br><br><br><br><br><br><br><br>
+
+<section class="header-area header-sticky2">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                        	<li class="scroll-to-section"><a th:href="@{/}" class="menu-item">Home</a></li>
+                            <li class="scroll-to-section"><a th:href="@{/statisticsPage}" class="menu-item">Go back</a></li>
+                           
+                        </ul>
+                        
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+	<div align="center">
 		<form method="POST" enctype="multipart/form-data" action="/uploadJsonLog">
 			<table>
 				<tr>

@@ -14,56 +14,99 @@ th, td {
 }
 </style>
 
+ <link rel="stylesheet" type="text/css" th:href="@{/template/assets/css/bootstrap.min.css}" />
 
+ <link rel="stylesheet" type="text/css" th:href="@{/template/assets/css/font-awesome.css}" />
+
+ <link rel="stylesheet" th:href="@{/template/assets/css/templatemo-lava.css}" />
+
+ <link rel="stylesheet" th:href="@{/template/assets/css/owl-carousel.css}" />
 </head>
 <body>
 
-	<div>
-		<table>
+<section>
+		<div align="center">
+			<header>
+				<img th:src="@{/images/museum.png}" width="800" height="150">
+				<br>
+				<br>
+				<p>
+					<font size="7" color="#ff8000">General Museum Statistics<br/></font>
+				</p>
+			</header>
+		</div>
+</section>
+<section class="header-area header-sticky2">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                        	<li class="scroll-to-section"><a th:href="@{/}" class="menu-item">Home</a></li>
+                            <li class="scroll-to-section"><a th:href="@{/statisticsPage}" class="menu-item">Go back</a></li>
+                           
+                        </ul>
+                        
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
 
+<br><br><br><br><br>
+
+	<div>
+		<table align="center">
+			<tr><td colspan="2" align="center"><font color="#ff8000">General Statistics</font></td></tr>
 			<tr>
-				<td>Average Visit Time: </td>
-				<td th:text="${avgVisitTime} +' min'"></td>
+				<td width="350" align="center">Average Visit Time: </td>
+				<td width="350" align="center">Average Visit Group Time: </td>
+				
 			</tr>
 			<tr>
-				<td>Average Visit Group Time: </td>
-				<td th:text="${avgGroupVisitTime} +' min'"></td>
+				<td width="350" align="center" th:text="${avgVisitTime} +' min'"></td>
+				<td width="350" align="center" th:text="${avgGroupVisitTime} +' min'"></td>
 			</tr>
 
 		</table>
 	</div>
-
-	<div>
+	<br><br>
+	<div align="center">
 		<table>
 
 			<tr>
-				<td>Hour</td>
-				<td>Number of visitors</td>
+				<td width="100" align="center"><font color="#ff8000">Hour</font></td>
+				<td  width="350" align="center"><font color="#ff8000">Number of visitors</font></td>
 			</tr>
 
 			<tr th:each="hour : ${hours}">
-				<td th:text="${hour.hour}"></td>
-				<td th:text="${hour.numberOfVisitors}"></td>
+				<td align="center" th:text="${hour.hour}"></td>
+				<td align="center" th:text="${hour.numberOfVisitors}"></td>
 			</tr>
 		</table>
 	</div>
-
-	<div>
+	<br><br>
+	<div align="center">
 		<ul>
 			<li th:each="hour : ${hours}">
 				<table>
 				    <tr>
-						<td th:text="'hour:' + ${hour.hour}"></td>
+						<td style="color: #ff8000;" align="center" colspan="2" th:text="'Hour: ' + ${hour.hour}"></td>
 					</tr>
 
 					<tr>
-						<td>Room</td>
-						<td>Number of visitors</td>
+						<td align="center">Room</td>
+						<td align="center">Number of visitors</td>
 					</tr>
 
 					<tr th:each="instance : ${hour.roomToNumberOfVisitors}">
-						<td th:text="${instance.key}"></td>
-						<td th:text="${instance.value}"></td>
+						<td width="300" align="center" th:text="${instance.key}"></td>
+						<td width="300" align="center" th:text="${instance.value}"></td>
 					</tr>
 				</table>
 
@@ -71,6 +114,7 @@ th, td {
 
 		</ul>
 	</div>
+	<br>
 
 
 

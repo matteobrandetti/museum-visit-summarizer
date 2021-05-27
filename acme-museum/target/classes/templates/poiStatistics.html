@@ -4,30 +4,79 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>POI Statistics</title>
+<style>
+table, th, td {
+	border: 1px solid black;
+}
+
+th, td {
+	padding: 10px;
+}
+</style>
 <link rel="stylesheet" th:href="@{/css/assetsFotografi/css/main.css}" />
+
+<link rel="stylesheet" type="text/css" th:href="@{/template/assets/css/bootstrap.min.css}" />
+
+ <link rel="stylesheet" type="text/css" th:href="@{/template/assets/css/font-awesome.css}" />
+
+ <link rel="stylesheet" th:href="@{/template/assets/css/templatemo-lava.css}" />
+
+ <link rel="stylesheet" th:href="@{/template/assets/css/owl-carousel.css}" />
 
 </head>
 <body>
 
+<section>
+		<div align="center">
+			<header>
+				<img th:src="@{/images/museum.png}" width="800" height="150">
+				<br>
+				<br>
+				<p>
+					<font size="7" color="#ff8000">POI Statistics<br/></font>
+				</p>
+			</header>
+		</div>
+</section><br><br><br><br><br><br><br>
+<section class="header-area header-sticky2">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                        	<li class="scroll-to-section"><a th:href="@{/}" class="menu-item">Home</a></li>
+                            <li class="scroll-to-section"><a th:href="@{/statisticsPage}" class="menu-item">Go back</a></li>
+                           
+                        </ul>
+                        
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div align="center">
 	<table>
 
 		<tr>
-			<td>POI name</td>
-			<td>Average time</td>
-			<td>Percent of total visitors</td>
+			<td style="color: #ff8000;" height="70" align="center">POI name</td>
+			<td style="color: #ff8000;" height="70" align="center">Average time</td>
+			<td style="color: #ff8000;" height="70" align="center">Percent of total visitors</td>
 		</tr>
 
 		<tr>
-			<td th:text="${poi.name}"></td>
-			<td th:text="${avgTimeOnPOI} +' seconds'"></td>
-			<td th:text="${percentOfVisitorsOnAPOI}+' %'"></td>
+			<td style="font-weight: bold;" width="250" height="70" align="center" th:text="${poi.name}"></td>
+			<td width="250" height="70" align="center" th:text="${avgTimeOnPOI} +' seconds'"></td>
+			<td width="250" height="70" align="center" th:text="${percentOfVisitorsOnAPOI}+' %'"></td>
 		</tr>
 
 	</table>
-	
-	<div>
-			<a th:href="@{/statisticsPage}"> Click for Museum Statistics</a>
 	</div>
+	
 
 
 
