@@ -14,9 +14,12 @@ The engine makes us also to visualize the **statistics** of a certain visit. Nam
 
 The exectuable file (.jar) of the Web App can be downloaded [here](https://drive.google.com/file/d/1c6hdJKcqEGeAgQrlpvVt5k_Wi1UKNT_e/view?usp=sharing) (usage and prerequisited described below).
 
-![picture](Homepage.png)
 
-![picture](VisitorPage.png)
+<p align="center">
+  <img src="Homepage.png" width="350">
+  <img src="VisitorPage.png" width="350">
+</p>
+
 
 ### Position Graph
 The **Position Graph** represents a directed graph, where a *node* is a POI and there exists an edge from a POI **a** to **b** whether the visitor moved from **a** to **b** in the visit. The graph (an example is depicted below) makes us to visualize the movements of the visitors among POIs. We can captures cycles and other infos.
