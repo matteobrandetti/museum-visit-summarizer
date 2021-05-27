@@ -16,8 +16,8 @@ The exectuable file (.jar) of the Web App can be downloaded [here](https://drive
 
 
 <p align="center">
-  <img src="Homepage.png" width="450" height="250">
-  <img src="VisitorPage.png" width="450" height="250">
+  <img src="Homepage.png" width="400" height="250">
+  <img src="VisitorPage.png" width="400" height="250">
 </p>
 
 
