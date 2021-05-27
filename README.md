@@ -12,7 +12,7 @@ Given a certain visitor or group (indentified by a number), it constructs two di
 
 The engine makes us also to visualize the **statistics** of a certain visit. Namely, if the visitor stayed more/less than average, if he/she enjoyed or interruped presentations. Moreover, it computes also the general statistics of the Haifa Museum for a certain day: (i) average time spent by the visitors/groups; (ii) number of visitors per hour (iii) number of visitors per room per hour.
 
-The exectuable file (.jar) of the Web App can be downloaded [here](https://drive.google.com/file/d/1c6hdJKcqEGeAgQrlpvVt5k_Wi1UKNT_e/view?usp=sharing) (usage and prerequisited described below).
+The exectuable file (.jar) of the Web App can be downloaded [here](https://drive.google.com/file/d/14htkxwP3RhUt1q7tV-2ifwN0tpCKRs7i/view?usp=sharing) (usage and prerequisited described below).
 
 
 <p align="center">
@@ -41,7 +41,7 @@ need to have a `python` version installed (you need to be able to excecute a pyt
 ## Usage
 ### Launching the Web App
 There are two ways to launch the Web App. You need to do the following two steps:
-1. You can either (i) download the executable `.jar` file from [here](https://drive.google.com/file/d/1c6hdJKcqEGeAgQrlpvVt5k_Wi1UKNT_e/view?usp=sharing)
+1. You can either (i) download the executable `.jar` file from [here](https://drive.google.com/file/d/14htkxwP3RhUt1q7tV-2ifwN0tpCKRs7i/view?usp=sharing)
 **OR** (ii) generate it using [maven](https://maven.apache.org/) by navigating inside the `acme-museum` folder and typing
 the command `mvn package` to compile and create the exectuable file.
 2. After you have the executable `.jar` file, navigate to the folder where the `acme-museum-1.0.0.jar` is located, open the terminal and type the command `java -jar acme-museum-1.0.0.jar`. Then, wait for the database initialization and connect your browser to `localhost:8080`.
